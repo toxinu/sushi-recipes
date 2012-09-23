@@ -3,6 +3,11 @@ import sys
 from fabric.api import task, local
 
 @task
+def init_dev():
+	init_venv()
+	update_requirements('dev')
+
+@task
 def update_requirements(env):
 	virtualenv('pip install -r requirements/%s.txt' % env)
 
