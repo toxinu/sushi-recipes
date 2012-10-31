@@ -3,7 +3,7 @@
 
 import sys
 
-from {{ module }}.core import stream_logger
+from {{ app|lower }}.core import stream_logger
 
 class Cli(object):
 	def __init__(self, *args, **kwargs):

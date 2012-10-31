@@ -10,7 +10,7 @@ except ImportError:
 	from distutils.core import setup
 
 setup(
-	name			= '{{ name }}',
+	name			= '{{ app|title }}',
 	version			= '0.1',
 	description 	= '## Set description',
 	long_description= open('README.rst').read(), 
@@ -19,7 +19,7 @@ setup(
 	author_email 	= '{{ email }}',
 	url 			= '## Set url',
 	keywords 		= '## Set keywords',
-	packages 		= ['{{ module }}'],
+	packages 		= ['{{ app|lower }}'],
 	install_requires= [],
 	classifiers		= (
 		'Intended Audience :: Developers',

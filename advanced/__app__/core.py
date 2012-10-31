@@ -2,4 +2,4 @@
 # coding: utf-8
 import os
 
-from {{ module }}.logger import stream_logger
+from {{ app|lower }}.logger import stream_logger

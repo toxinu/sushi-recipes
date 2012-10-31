@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-__title__ = '{{ name }}'
+__title__ = '{{ app|title }}'
 __version__ = '0.1'
 __author__ = '{{ username }}'
 __license__ = '{{ license }}'

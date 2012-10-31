@@ -26,5 +26,5 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-{{ name }}/*.pyc
+{{ app|lower }}/*.pyc
 .DS_Store

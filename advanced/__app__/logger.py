@@ -4,7 +4,7 @@
 import os
 import logging
 
-def get_stream_logger(name='{{ name }}-cli'):
+def get_stream_logger(name='{{ app|lower }}-cli'):
 	stream_logger = logging.getLogger(name)
 	ch = logging.StreamHandler()
 	stream_logger.setLevel(logging.INFO)

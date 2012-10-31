@@ -14,7 +14,7 @@ if sys.argv[-1] == 'publish':
 	sys.exit()
 
 setup(
-	name			= '{{ name }}',
+	name			= '{{ app|title }}',
 	version			= '0.1',
 	description 	= '## Set description',
 	long_description= open('README.rst').read() + '\n\n' + open('HISTORY.rst').read(), 
@@ -24,7 +24,7 @@ setup(
 	url 			= '## Set url',
 	keywords 		= '## Set keywords',
 	packages 		= ['{{ module }}'],
-	scripts 		= ['scripts/{{ name }}'],
+	scripts 		= ['scripts/{{ app|lower }}'],
 	install_requires= ['docopt==0.5.0'],
 	classifiers		= (
 		'Intended Audience :: Developers',

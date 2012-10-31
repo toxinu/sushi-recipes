@@ -2,16 +2,16 @@
 # coding: utf-8
 
 import os
-import {{ module }}
+import {{ app|lower }}
 
 from docopt import docopt
 from {{ module }}.cli import Cli
 
-doc = """{{ name }}, ## Set description.
+doc = """{{ app|title }}, ## Set description.
 
 Usage:
-  {{ module }} -h | --help
-  {{ module }} -v | --version
+  {{ app|lower }} -h | --help
+  {{ app|lower }} -v | --version
 
 Options:
   -h --help           Show help
@@ -19,6 +19,6 @@ Options:
 """
 
 if __name__ == '__main__':
-	args = docopt(doc, version={{ module }}.__version__)
+	args = docopt(doc, version={{ app|lower }}.__version__)
 	cli = Cli(**args)
 	cli.start()

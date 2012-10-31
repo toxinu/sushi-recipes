@@ -14,13 +14,13 @@ def update_requirements(env):
 @task
 def runserver(env, ip='127.0.0.1', port=8000, workers=2):
 	if env == 'prod':
-		virtualenv('gunicorn {{ name }}.wsgi:application --workers=%s -b %s:%s' % (workers, ip, port))
+		virtualenv('gunicorn {{ app|lower }}.wsgi:application --workers=%s -b %s:%s' % (workers, ip, port))
 	else:
-		virtualenv('python manage.py runserver %s:%s --settings=\'{{ name }}.settings.%s\'' % (ip, port, env))
+		virtualenv('python manage.py runserver %s:%s --settings=\'{{ app|lower }}.settings.%s\'' % (ip, port, env))
 
 @task
 def syncdb(env):
-	virtualenv('python manage.py syncdb --settings=\'{{ name }}.settings.%s\'' % env)
+	virtualenv('python manage.py syncdb --settings=\'{{ app|lower }}.settings.%s\'' % env)
 
 def virtualenv(command):
 	if not os.path.exists('venv'):

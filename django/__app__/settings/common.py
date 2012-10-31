@@ -5,7 +5,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Geoffrey Lehee', 'geoffrey@lehee.name'),
+    ('{{ firstname }} {{ lastname }}', '{{ email }}'),
 )
 
 MANAGERS = ADMINS
@@ -98,10 +98,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = '{{ name }}.urls'
+ROOT_URLCONF = '{{ app|lower }}.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = '{{ name }}.wsgi.application'
+WSGI_APPLICATION = '{{ app|lower }}.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
