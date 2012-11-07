@@ -5,7 +5,7 @@ import os
 import {{ app|lower }}
 
 from docopt import docopt
-from {{ module }}.cli import Cli
+from {{ app|lower }}.cli import Cli
 
 doc = """{{ app|title }}, ## Set description.
 
