@@ -33,7 +33,7 @@ setup(
 	author_email 	= '{{ email }}',
 	url 			= '## Set url',
 	keywords 		= '## Set keywords',
-	packages 		= ['{{ module }}'],
+	packages 		= ['{{ app|lower }}'],
 	scripts 		= ['scripts/{{ app|lower }}'],
 	install_requires= ['docopt==0.5.0'],
 	classifiers		= (
