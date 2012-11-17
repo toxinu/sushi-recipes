@@ -1,5 +1,5 @@
 """
-WSGI config for {{ app|title }} project.
+WSGI config for {{ app|lower }} project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable
