@@ -3,6 +3,7 @@
 
 import os
 import sys
+import re
 
 try:
 	from setuptools import setup
@@ -25,7 +26,7 @@ if sys.argv[-1] == 'publish':
 
 setup(
 	name			= '{{ app|title }}',
-	version			= '0.1',
+	version			= get_version(),
 	description 	= '## Set description',
 	long_description= open('README.rst').read(), 
 	license 		= open('LICENSE').read(),
