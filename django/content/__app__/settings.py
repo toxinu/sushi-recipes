@@ -152,3 +152,26 @@ LOGGING = {
         },
     }
 }
+
+if ENVIRONMENT == "PRODUCTION":
+    import dj_database_url
+
+    DEBUG = False
+    TEMPLATE_DEBUG = DEBUG
+
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
+
+elif ENVIRONMENT == "DEVELOPMENT":
+    import os
+
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'dev.sqlite3',
+        }
+    }

@@ -1,26 +1,18 @@
+import os
 from fabric.api import *
-
-# current_git_branch = local('git symbolic-ref HEAD', capture=True).split('/')[-1]
-
 
 # === Environments ===
 def development():
     env.env = 'development'
-    env.settings = '{{ app|lower }}.settings.development'
-
-
-def staging():
-    env.env = 'staging'
-    env.settings = '{{ app|lower }}.settings.staging'
-    env.remote = ''
-    env.heroku_app = ''
-
+    env.settings = '{{ app|lower }}.settings'
+    os.environ['ENVIRONMENT'] = 'development'
 
 def production():
     env.env = 'production'
-    env.settings = '{{ app|lower }}.settings.production'
+    env.settings = '{{ app|lower }}.settings'
     env.remote = ''
     env.heroku_app = ''
+    os.environ['ENVIRONMENT'] = 'production'
 
 
 # Default Environment
@@ -36,11 +28,7 @@ def deploy():
 def collectstatic():
     # brunchbuild()
     local('python manage.py collectstatic --noinput -i app -i config.coffee \
-            -i node_modules -i package.json --settings={settings}'.format(**env))
-    # if env.env != 'development':
-    #     commit_id = local('git rev-parse HEAD', capture=True)
-    #     _config_set(key='HEAD_COMMIT_ID', value=commit_id)
-
+            -i node_modules -i package.json')
 
 def brunchwatch(app_name='core'):
     local('cd {{ app|lower }}/%s/static/ && brunch w' % app_name)
