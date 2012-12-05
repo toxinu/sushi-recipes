@@ -7,4 +7,4 @@ __author__ = '{{ username }}'
 __license__ = '{{ license }}'
 __copyright__ = 'Copyright {{ year }} {{ firstname }} {{ lastname }}'
 
-import core
+from {{ app }} import core
