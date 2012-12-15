@@ -1,4 +1,4 @@
-Django==1.4.1
+Django==1.4.4
 Fabric==1.4.3
 South==0.7.6
 Werkzeug==0.8.3

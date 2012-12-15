@@ -44,7 +44,8 @@ def brunchbuild(app_name='core'):
 def resetdb():
     if env.env == 'development':
         with settings(warn_only=True):
-            local('rm dev.sqlite3')
+            if os.path.exists('dev.sqlite3'):
+                local('rm dev.sqlite3')        
         local('python manage.py syncdb --settings={settings}'.format(**env))
         local('python manage.py migrate --settings={settings}'.format(**env))
     else:
