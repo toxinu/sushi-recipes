@@ -33,7 +33,7 @@ if sys.argv[-1] == 'publish':
 	sys.exit()
 
 setup(
-	name=u('{{ app|title }}'),
+	name=u('{{ app }}'),
 	version=get_version(),
 	description='## Set description',
 	long_description=open('README.rst').read() + '\n\n' + open('HISTORY.rst').read(),
